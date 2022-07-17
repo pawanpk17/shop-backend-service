@@ -1,7 +1,7 @@
 import { Context, Callback } from 'aws-lambda';
 import { main as handler } from './handler';
-import { fetchProductById } from '../../services/product-service'
-import { mockDBfunction } from '../mock'
+import { fetchProductById } from '../../services/product-service';
+import { mockDBfunction } from '../mock';
 
 const event = {
   pathParameters: {
