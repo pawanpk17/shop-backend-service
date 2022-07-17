@@ -1,4 +1,3 @@
-
   // Output of getProducts function
   const getProductsOutput = (isError, isEmptyOutput) => {
     // Mock error
@@ -13,9 +12,8 @@
       };
     }
   
-
-    const mockedData = [
-        {
+const mockedData = [
+    {
           "id": 1,
           "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
           "price": 109.95,
