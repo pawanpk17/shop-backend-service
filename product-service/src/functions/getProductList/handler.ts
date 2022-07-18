@@ -2,6 +2,7 @@ import type { ValidatedEventAPIGatewayProxyEvent } from '@libs/api-gateway';
 import { middyfy } from '../../libs/lambda';
 import schema from './schema';
 import { getProducts } from '../../services/product-service'
+import { errorResponse, successResponse } from "../../utils/apiResponseBuilder";
 
 const getProductList: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
   console.log("Lambda invocation with event: ", JSON.stringify(event));
@@ -10,13 +11,14 @@ const getProductList: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async 
 
     const products = await getProducts();
     if(products && products.length){
-      console.log('success')
+      return successResponse(products, 200)
     }
 
     console.log(`Product not found`, products);
     
     }catch (error) {
 	    console.log(error)
+      return errorResponse(error, 500)
     }
 };
 
