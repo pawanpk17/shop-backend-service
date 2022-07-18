@@ -4,7 +4,7 @@ import schema from './schema';
 import { fetchProductById } from '../../services/product-service'
 import { errorResponse, successResponse } from "../../utils/apiResponseBuilder";
 
-const getProductById: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
+const getProductById: ValidatedEventAPIGatewayProxyEvent<typeof schema> | any = async (event) => {
   console.log("Lambda invocation with event: ", JSON.stringify(event));
   const { productId } = event.pathParameters;
 
