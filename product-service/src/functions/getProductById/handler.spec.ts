@@ -1,6 +1,6 @@
 import { Context, Callback } from 'aws-lambda';
 import { main as handler } from './handler';
-import { fetchProductById } from '../../services/product-service';
+import { getProductById } from '../../services/product-service';
 import { mockDBfunction } from '../mock';
 
 const event = {
@@ -14,7 +14,7 @@ const callback = null as Callback;
 jest.mock('../../services/product-service', () => ({
   fetchProductById: jest.fn(),
 }));
-const fetchProductByIdMock = fetchProductById as jest.MockedFunction<typeof fetchProductById>
+const fetchProductByIdMock = getProductById as jest.MockedFunction<typeof getProductById>
 
 describe('Verify getProductsById Handler', () => {
   it('Should return product object', async () => {

@@ -1,12 +1,21 @@
 import { ProductServiceInterface } from './products';
-import { products } from './products-data.json';
+import { query, fetchProduct, createProduct } from '../model/db-services'
+
 class ProductServices implements ProductServiceInterface {
-    fetchProductById(id: string) {
-        return Promise.resolve(products.find( product => product.id === id));
+    async getProductById(id: string) {
+        const { rows } = await fetchProduct(id);
+        return Promise.resolve(rows);
+    }
+
+    async createProductService(productData) {
+        const { rows } = await createProduct(productData);
+        return Promise.resolve(rows);
     }
     
-    getProducts() {
-        return Promise.resolve(products);
+    async getProducts() {
+        const { rows } = await query();
+        return Promise.resolve(rows);
     }
 }
-export const { fetchProductById, getProducts } = new ProductServices()
+export const { getProductById, createProductService, getProducts } = new ProductServices()
+export { ProductServices }

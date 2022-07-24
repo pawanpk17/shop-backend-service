@@ -1,14 +1,14 @@
 export interface ProductInterface {
-  id: number,
+  id: string,
   title: string,
   description: string,
   price: number,
+  category: string,
   image: string,
-  count: number,
   rating: Object,
 }
 
 export interface ProductServiceInterface {
-  fetchProductById: (id: string) => Promise<ProductInterface>,
+  getProductById: (id: string) => Promise<ProductInterface>,
   getProducts: () => Promise<ProductInterface[]>
 }

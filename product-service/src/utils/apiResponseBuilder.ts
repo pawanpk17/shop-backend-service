@@ -1,7 +1,7 @@
  interface ResponseInterface{
      statusCode: number
      headers: Object
-     body: Object
+     body: string
  }
 
  const defaultHeaders = {

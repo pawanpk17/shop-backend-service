@@ -1,4 +1,6 @@
-{
+import { ProductInterface } from './products';
+
+const products : {[key: string]: Array<ProductInterface>} = {
   "products" : [
   {
     "id": "1",
@@ -242,3 +244,5 @@
   }
 ]
 }
+
+export default products
