@@ -1,0 +1,1 @@
+{"version":3,"file":"schema.js","sourceRoot":"","sources":["../../../../src/functions/getProductById/schema.ts"],"names":[],"mappings":"AAAA,eAAe;IACb,IAAI,EAAE,QAAQ;IACd,UAAU,EAAE;QACV,SAAS,EAAE,EAAE,IAAI,EAAE,QAAQ,EAAE;KAC9B;IACD,QAAQ,EAAE,CAAC,WAAW,CAAC;CACf,CAAC"}
